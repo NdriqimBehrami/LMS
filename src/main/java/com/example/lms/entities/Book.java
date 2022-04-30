@@ -1,8 +1,18 @@
 package com.example.lms.entities;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
+
+
+@Entity
+@Table(name = "BOOKS")
+
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long bookId;
     private String title;
     private int releaseYear;
