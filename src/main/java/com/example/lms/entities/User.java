@@ -1,7 +1,15 @@
 package com.example.lms.entities;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="USERS")
 public class User {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private long userId;
+
     private String userName;
     private String password;
     private boolean enabled = true;
@@ -13,6 +21,10 @@ public class User {
     private String address;
     private String city;
     private String phoneNumber;
+
+    public User (){
+
+    }
 
     public User(String userName, String password, String email, String firstName,
                 String lastName, String address, String phoneNumber, String city) {
